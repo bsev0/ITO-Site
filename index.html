@@ -13,16 +13,20 @@
       font-family: sans-serif;
       min-height: 100vh;
       overflow: auto;
+      /* ensure content isn't covered by fixed header */
+      padding-top: 80px;
     }
     header {
-      position: absolute;
-      width: 100%;
+      position: fixed;
       top: 0;
       left: 0;
+      right: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px;
+      box-sizing: border-box;
+      background: transparent;
       z-index: 10;
     }
     #logo {
@@ -99,7 +103,7 @@
 </head>
 <body>
   <header>
-    <img id="logo" src="./ITO%20LOGO%20TRANSPARENT.png" alt="ITO Logo">
+    <img id="logo" src="./ITO%20LOGO%20TRANSPARENT.png" alt="ITO Logo" />
     <button id="about-button">ABOUT</button>
   </header>
 
@@ -111,7 +115,7 @@
 
   <div id="video-container">
     <video id="main-video" controls preload="metadata">
-      <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+      <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
     <div id="watch-overlay">WATCH</div>
@@ -150,4 +154,3 @@
   </script>
 </body>
 </html>
-
