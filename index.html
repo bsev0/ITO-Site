@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITO</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: white;
+      color: black;
+      font-family: sans-serif;
+      height: 100vh;
+      overflow: hidden;
+    }
+    header {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      z-index: 10;
+    }
+    #logo {
+      height: 40px;
+    }
+    #about-button {
+      cursor: pointer;
+      font-size: 14px;
+      background: none;
+      border: none;
+      text-transform: uppercase;
+    }
+    #about-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      color: black;
+      z-index: 20;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    #about-text {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+    #video-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      max-width: 960px;
+      aspect-ratio: 16 / 9;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      background: black;
+      display: block;
+    }
+    #watch-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s;
+      cursor: pointer;
+    }
+    #video-container:hover #watch-overlay {
+      opacity: 1;
+    }
+    footer {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img id="logo" src="./ITO%20LOGO%20TRANSPARENT.png" alt="ITO Logo">
+    <button id="about-button">ABOUT</button>
+  </header>
+
+  <div id="about-overlay">
+    <div id="about-text">
+      <p>ITO is a creative sound & music studio exploring space, time, and transmission through audio-visual expression.</p>
+    </div>
+  </div>
+
+  <div id="video-container">
+    <video id="main-video" src="https://your-bunny-url.b-cdn.net/video.mp4" controls></video>
+    <div id="watch-overlay">WATCH</div>
+  </div>
+
+  <footer>
+    CREATIVE SOUND & MUSIC STUDIO
+  </footer>
+
+  <script>
+    const aboutBtn = document.getElementById('about-button');
+    const aboutOverlay = document.getElementById('about-overlay');
+    const aboutText = document.getElementById('about-text');
+
+    aboutBtn.addEventListener('click', () => {
+      aboutOverlay.style.display = 'flex';
+    });
+
+    aboutOverlay.addEventListener('click', (e) => {
+      if (!aboutText.contains(e.target)) {
+        aboutOverlay.style.display = 'none';
+      }
+    });
+
+    const watchOverlay = document.getElementById('watch-overlay');
+    const video = document.getElementById('main-video');
+
+    watchOverlay.addEventListener('click', () => {
+      video.play();
+      watchOverlay.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
