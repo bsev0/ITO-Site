@@ -183,6 +183,8 @@ original music • sound supervision • strategy
     CREATIVE SOUND & MUSIC STUDIO
   </footer>
 
+    <div id="clock"></div>
+
   <script>
     const aboutBtn = document.getElementById('about-button');
     const aboutOverlay = document.getElementById('about-overlay');
@@ -209,6 +211,17 @@ original music • sound supervision • strategy
     video.addEventListener('pause', () => {
       watchOverlay.style.display = 'flex';
     });
+
+
+    // Clock update
+    function updateClock() {
+      const now = new Date();
+      const opts = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      clockEl.textContent = now.toLocaleTimeString(undefined, opts);
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+    
   </script>
 </body>
 </html>
