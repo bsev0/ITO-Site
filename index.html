@@ -11,8 +11,8 @@
       background: white;
       color: black;
       font-family: sans-serif;
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
+      overflow: auto;
     }
     header {
       position: absolute;
@@ -48,6 +48,8 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      overflow-y: auto;
+      padding: 20px;
     }
     #about-text {
       max-width: 600px;
@@ -108,7 +110,10 @@
   </div>
 
   <div id="video-container">
-    <video id="main-video" src="https://your-bunny-url.b-cdn.net/video.mp4" controls></video>
+    <video id="main-video" controls preload="metadata">
+      <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
     <div id="watch-overlay">WATCH</div>
   </div>
 
@@ -138,6 +143,11 @@
       video.play();
       watchOverlay.style.display = 'none';
     });
+
+    video.addEventListener('pause', () => {
+      watchOverlay.style.display = 'flex';
+    });
   </script>
 </body>
 </html>
+
