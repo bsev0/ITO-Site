@@ -11,10 +11,8 @@
       background: white;
       color: black;
       font-family: sans-serif;
-      min-height: 100vh;
-      overflow: auto;
-      /* ensure content isn't covered by fixed header */
-      padding-top: 80px;
+      height: 100vh;
+      overflow: hidden;
     }
     header {
       position: fixed;
@@ -54,6 +52,7 @@
       text-align: center;
       overflow-y: auto;
       padding: 20px;
+      box-sizing: border-box;
     }
     #about-text {
       max-width: 600px;
@@ -61,7 +60,7 @@
       padding: 20px;
     }
     #video-container {
-      position: absolute;
+      position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -94,7 +93,7 @@
       opacity: 1;
     }
     footer {
-      position: absolute;
+      position: fixed;
       bottom: 20px;
       left: 20px;
       font-size: 12px;
