@@ -99,6 +99,13 @@
       background: black;
       display: block;
     }
+
+   /* hide time display in Chrome/Safari controls */
+    video::-webkit-media-controls-current-time-display,
+    video::-webkit-media-controls-time-remaining-display {
+      display: none !important;
+    }
+    
     #watch-overlay {
       position: absolute;
       top: 0;
