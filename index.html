@@ -141,40 +141,6 @@
       text-transform: uppercase;
       font-family: inherit;
     }
-
-
-        /* Cookie policy banner */
-  #cookie-banner {
-      position: fixed;
-      bottom: 40px;
-      right: 20px;
-      background: white;
-      border: 1px solid black;
-      padding: 2px 4px;
-      font-size: 12px;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      z-index: 30;
-      /* match width of clock */
-      width: max-content;
-      min-width: 5ch;
-    }
-    #cookie-banner button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 12px;
-      text-transform: uppercase;
-      appearance: none;
-      color: black;
-      transition: color 0.2s;
-    }
-    #cookie-banner button:hover {
-      color: grey;
-    }
-    
     
   </style>
 </head>
@@ -242,12 +208,6 @@ original music • sound supervision • strategy
     CREATIVE SOUND & MUSIC STUDIO
   </footer>
 
-    <div id="cookie-banner">
-    <span>We use cookies.</span> <br>
-    <button id="cookie-accept">Accept</button>
-    <button id="cookie-decline">Decline</button>
-  </div>
-
     <div id="clock"></div>
 
   <script>
@@ -255,9 +215,6 @@ original music • sound supervision • strategy
     const aboutOverlay = document.getElementById('about-overlay');
     const aboutText = document.getElementById('about-text');
     const clockEl = document.getElementById('clock');
-        const cookieBanner = document.getElementById('cookie-banner');
-    const btnAccept = document.getElementById('cookie-accept');
-    const btnDecline = document.getElementById('cookie-decline');
 
     aboutBtn.addEventListener('click', () => {
       aboutOverlay.style.display = 'flex';
@@ -290,14 +247,6 @@ original music • sound supervision • strategy
     }
     setInterval(updateClock, 1000);
     updateClock();
-
-
-    
-    // Cookie banner handlers
-    function closeBanner() { cookieBanner.style.display = 'none'; }
-    btnAccept.addEventListener('click', closeBanner);
-    btnDecline.addEventListener('click', closeBanner);
-    
     
   </script>
 </body>
